@@ -31,7 +31,7 @@ const ReviewSection = ({ gameId }) => {
     const fetchReviews = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:5001/api/reviews/${gameId}`);
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/${gameId}`);
         const data = await res.json();
         setReviews(data);
         setError(null);
@@ -76,7 +76,7 @@ const ReviewSection = ({ gameId }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`http://localhost:5001/api/reviews/${reviewId}`, {
+          const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/${reviewId}`, {
             method: 'DELETE',
             headers: { 'x-auth-token': token },
           });
@@ -113,7 +113,7 @@ const ReviewSection = ({ gameId }) => {
 
       if (isEditing) {
         // --- LÓGICA DE ACTUALIZACIÓN (PUT) ---
-        res = await fetch(`http://localhost:5001/api/reviews/${editingReviewId}`, {
+        res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/${editingReviewId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ const ReviewSection = ({ gameId }) => {
 
       } else {
         // --- LÓGICA DE CREACIÓN (POST) ---
-        res = await fetch(`http://localhost:5001/api/reviews/${gameId}`, {
+        res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/${gameId}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

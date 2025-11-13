@@ -21,7 +21,7 @@ const GameDetail = () => {
     const fetchGameDetails = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:5001/api/juegos/${slug}`);
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/juegos/${slug}`);
         if (!res.ok) {
           throw new Error('Juego no encontrado');
         }
@@ -31,7 +31,7 @@ const GameDetail = () => {
 
         // 1. Verificar si el juego ya está en la biblioteca del usuario (si está logueado)
         if (isAuthenticated && token) {
-          const libraryRes = await fetch('http://localhost:5001/api/library', {
+          const libraryRes = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/library', {
             headers: {
               'x-auth-token': token,
             },
@@ -72,7 +72,7 @@ const GameDetail = () => {
     }
     
     try {
-      const res = await fetch('http://localhost:5001/api/library', {
+      const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/library', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

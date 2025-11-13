@@ -19,7 +19,7 @@ const GameCategorySlider = ({ category, isReverse = false }) => {
     const fetchGames = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:5001/api/juegos/destacados/${category}`);
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/juegos/destacados/${category}`);
         if (!res.ok) {
           throw new Error('No se pudieron cargar los juegos de la categoría.');
         }

@@ -41,7 +41,7 @@ const SignIn = () => {
         };
 
         // 1. Hacemos la petición POST con Fetch
-        const res = await fetch('http://localhost:5001/api/auth/register', {
+        const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/auth/register', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ const SearchResults = () => {
       if (!query) return;
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5001/api/search?q=${query}`);
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/search?q=${query}`);
         const data = await res.json();
         setResults(data);
       } catch (err) {

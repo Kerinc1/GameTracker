@@ -41,7 +41,7 @@ const Library = () => {
       const fetchUserGames = async () => {
         try {
           setLoading(true);
-          const res = await fetch('http://localhost:5001/api/library', {
+          const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/library', {
             headers: {
               'x-auth-token': token,
             },
@@ -98,7 +98,7 @@ const Library = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch('http://localhost:5001/api/library', {
+          const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/library', {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ const Library = () => {
         if (result.isConfirmed) {
         try {
             // Hacemos la petición DELETE a la API con el ID específico
-            const res = await fetch(`http://localhost:5001/api/library/${userGameId}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/library/${userGameId}`, {
             method: 'DELETE',
             headers: {
                 'x-auth-token': token,
@@ -197,7 +197,7 @@ const Library = () => {
     if (!gameToEdit) return;
 
     try {
-        const res = await fetch(`http://localhost:5001/api/library/${gameToEdit._id}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/library/${gameToEdit._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
