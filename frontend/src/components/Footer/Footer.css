@@ -59,3 +59,52 @@
 .footer-column a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer-right {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .footer-left {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 1rem 0.5rem;
+  }
+  .footer-sitename {
+    font-size: 1.2rem;
+  }
+  .footer-column h4 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .footer-column a {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-container {
+    padding: 0.5rem 0.2rem;
+  }
+  .footer-sitename {
+    font-size: 1rem;
+  }
+  .footer-column h4,
+  .footer-column a {
+    font-size: 0.85rem;
+  }
+}
