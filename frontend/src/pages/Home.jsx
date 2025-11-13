@@ -11,10 +11,6 @@ const Home = () => {
       <HeroCarousel />
       <GameShowcase />
       <PopularGames />
-      
-      
-      {/* Aquí irá el resto del contenido de la Home,
-          como los grids de juegos ('BibliotecaJuegos') */}
     </main>
   );
 };
