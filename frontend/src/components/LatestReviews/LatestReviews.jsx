@@ -14,7 +14,7 @@ const LatestReviews = () => {
     const fetchLatestReviews = async () => {
       try {
         setLoading(true);
-        const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/reviews/latest');
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/latest`);
         const data = await res.json();
         if (res.ok) {
           setReviews(data);

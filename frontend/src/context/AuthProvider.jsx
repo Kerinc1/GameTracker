@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(true);
         try {
           // 1. Llama a la nueva ruta /api/auth/me
-          const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/auth/me', {
+          const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/me`, {
             headers: {
               'x-auth-token': tokenInStorage,
             },

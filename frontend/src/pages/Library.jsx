@@ -41,7 +41,7 @@ const Library = () => {
       const fetchUserGames = async () => {
         try {
           setLoading(true);
-          const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/library', {
+          const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/library`, {
             headers: {
               'x-auth-token': token,
             },
@@ -98,7 +98,7 @@ const Library = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/library', {
+          const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/library`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
